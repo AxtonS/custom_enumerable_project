@@ -12,6 +12,16 @@ module Enumerable
     end
     array
   end
+
+  def my_select
+    array = []
+    i = 0
+    while i < length
+      array.push(self[i]) if yield(self[i])
+      i += 1
+    end
+    array
+  end
 end
 
 # You will first have to define my_each
