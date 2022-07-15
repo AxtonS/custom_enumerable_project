@@ -32,6 +32,16 @@ module Enumerable
     end
     is_true
   end
+
+  def my_any?
+    is_true = false
+    i = 0
+    while i < length
+      is_true = true if yield(self[i])
+      i += 1
+    end
+    is_true
+  end
 end
 
 # You will first have to define my_each
