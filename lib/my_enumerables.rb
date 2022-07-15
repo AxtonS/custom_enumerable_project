@@ -76,6 +76,16 @@ module Enumerable
     end
     array
   end
+
+  def my_inject(initial)
+    output = initial
+    i = 0
+    while i < length
+      output = yield(output, self[i])
+      i += 1
+    end
+    output
+  end
 end
 
 # You will first have to define my_each
