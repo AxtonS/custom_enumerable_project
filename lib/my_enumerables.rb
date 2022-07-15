@@ -9,15 +9,11 @@ module Enumerable; end
 # to this method
 class Array
   def my_each
-    i = 0
     array = []
+    i = 0
     while i < length
-      
-      # This line passes "returns the original array" test
-      # array.push(self[i])
-      
-      # This line passes "executes the block for each element" test
-      # array.push(yield(self[i]))
+      array.push(self[i])
+      yield(self[i])
       i += 1
     end
     array
