@@ -66,6 +66,16 @@ module Enumerable
     end
     count
   end
+
+  def my_map
+    array = []
+    i = 0
+    while i < length
+      array.push(yield(self[i]))
+      i += 1
+    end
+    array
+  end
 end
 
 # You will first have to define my_each
