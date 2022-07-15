@@ -52,6 +52,20 @@ module Enumerable
     end
     is_true
   end
+
+  def my_count
+    count = 0
+    i = 0
+    while i < length
+      if block_given?
+        count += 1 if yield(self[i])
+      else
+        count += 1
+      end
+      i += 1
+    end
+    count
+  end
 end
 
 # You will first have to define my_each
